@@ -13,7 +13,9 @@ export default class Ingredient extends BaseModel {
   @column()
   public price: number
 
-  @manyToMany(() => Plat)
+  @manyToMany(() => Plat, {
+    pivotTable: 'plats_ingredients',
+  })
   public plats: ManyToMany<typeof Plat, LucidModel>
 
   @column.dateTime({ autoCreate: true })

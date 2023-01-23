@@ -13,17 +13,14 @@ export default class Plat extends BaseModel {
     @column()
     public price: number
 
-    @manyToMany(() => Ingredient) 
+    @manyToMany(() => Ingredient, {
+    pivotTable: 'plats_ingredients',
+    })
     public ingredients: ManyToMany<typeof Ingredient, LucidModel>
 
-    
-  @manyToMany(() => Plat)
-  public plats: ManyToMany<typeof Plat, LucidModel>
-   
     @column.dateTime({ autoCreate: true })
     public createdAt: DateTime
 
     @column.dateTime({ autoCreate: true, autoUpdate: true })
     public updatedAt: DateTime
-
-} 
+}
