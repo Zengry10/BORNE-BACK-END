@@ -3,7 +3,6 @@ import ValidatorRegister from '../../Validators/Auth/ValidatorRegister'
 import ValidatorLogin from '../../Validators/Auth/ValidatorLogin'
 import User from '../../Models/User'
  
-
 export default class AuthController {
     
     public async register({request ,response}){
@@ -43,4 +42,13 @@ export default class AuthController {
             return response.status(404).send({ error: error.message })
         }
     }
+
+    public async me({auth, response} : HttpContextContract) {
+        const user = auth.user!
+  
+        return response.ok({
+           ...user.serialize() 
+          })
+      }
+
 }

@@ -23,7 +23,11 @@ export default class IngredientValidator {
    *     ])
    *    ```
    */
-  public schema = schema.create({})
+  public schema = schema.create({
+    name: schema.string({ trim: true }),
+    stock: schema.number(),
+    price: schema.number(),
+  })
 
   /**
    * Custom messages for validation failures. You can make use of dot notation `(.)`

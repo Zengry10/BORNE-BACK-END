@@ -1,38 +1,13 @@
-import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Ingredient extends BaseModel {
-  @column({ isPrimary: true })
-  public id: number
-
   @column()
   public name: string
 
   @column()
-  public tomate: string
+  public stock: number
 
   @column()
-  public salade: string
+  public price: number
 
-  @column()
-  public oignon: string
-
-  @column()
-  public fromage: string
-
-  @column()
-  public sauce: string
-
-  @column()
-  public viande: string
-
-  @column()
-  public poisson: string
-
-
-  @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
-
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
 }
