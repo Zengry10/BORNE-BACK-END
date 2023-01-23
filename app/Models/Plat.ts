@@ -12,7 +12,7 @@ export default class Plat extends BaseModel {
     @column()
     public price: number
 
-    @manyToMany(() => Ingredient) 
+    @manyToMany(() => Ingredient) // ManyToMany<typeof Ingredient>
     ingredients: Ingredient[]
    
     @column.dateTime({ autoCreate: true })
