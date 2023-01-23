@@ -35,13 +35,14 @@ Route.group(() => {
   return Ingredient.all()
   }).middleware('auth')
   Route.get('me', 'AuthController.me').middleware(['auth'])
+  Route.post('/createIngredient', 'IngredientsController.CreateRecette')
   }).prefix('user')
 
 
   
 
 
-Route.post('/recette', 'IngredientsController.CreateRecette')
+
 Route.post('/register', 'AuthController.register')
 Route.post('/login', 'AuthController.login')
 Route.delete('/delete/:id', 'AuthController.delete')

@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
+import { LucidModel } from '@ioc:Adonis/Lucid/Orm'
 import Plat from './Plat'
 
 export default class Ingredient extends BaseModel {

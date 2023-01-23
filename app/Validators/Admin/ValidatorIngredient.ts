@@ -1,5 +1,6 @@
 import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { rules } from '@ioc:Adonis/Core/Validator'
 
 export default class IngredientValidator {
   constructor(protected ctx: HttpContextContract) {}
@@ -24,11 +25,14 @@ export default class IngredientValidator {
    *    ```
    */
   public schema = schema.create({
-    name: schema.string({ trim: true }),
+    name: schema.string({ trim: true }, [
+      rules.unique({ table: 'ingredients', column: 'name' }),
+    ]),
     stock: schema.number(),
     price: schema.number(),
   })
-
+ 
+  
   /**
    * Custom messages for validation failures. You can make use of dot notation `(.)`
    * for targeting nested fields and array expressions `(*)` for targeting all
