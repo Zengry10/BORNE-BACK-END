@@ -9,4 +9,6 @@ export default class IngredientsController {
         const ingredient = await Ingredient.create(payload)
         return response.created(ingredient)
       }
+
+      
 } 
