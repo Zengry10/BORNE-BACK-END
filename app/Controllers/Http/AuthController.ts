@@ -51,4 +51,9 @@ export default class AuthController {
           })
       }
 
+    public async show(){
+        const user = await User.all()
+        return user
+    }
+
 }

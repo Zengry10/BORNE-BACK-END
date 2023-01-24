@@ -27,19 +27,21 @@ import Ingredient from '../app/Models/Ingredient'
 
 
 Route.group(() => {
-  Route.get('read/ingredient', async () => {
-  return Ingredient.all()
-  })
-  Route.get('me', 'AuthController.me').middleware(['auth'])
-  Route.post('create/ingredient', 'IngredientsController.createRecette')
-  Route.get('/allPlats', 'PlatsController.index')
-  Route.get('/read', async () => {
-    return  User.all()
-  })
 
+  Route.get('/read/user', 'AuthController.show')
+  Route.get('me', 'AuthController.me').middleware(['auth'])
+
+
+  Route.get('/read/ingredient', 'IngredientsController.show')
+  Route.get('/read/ingredient/:id', 'IngredientsController.showOne')
+  Route.post('create/ingredient', 'IngredientsController.createRecette')
+
+
+  Route.get('/read/plat/:id', "PlatsController.show")
+  Route.get('/allPlats', 'PlatsController.index')
   Route.post('/create/plat', "PlatsController.create")
   Route.delete('/delete/plat/:id', 'AuthController.delete')
-  Route.get('/read/plat/:id', "PlatsController.show")
+
 
   }).prefix('admin').middleware('auth')
 

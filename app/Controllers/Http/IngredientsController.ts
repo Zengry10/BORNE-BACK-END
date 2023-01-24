@@ -10,5 +10,14 @@ export default class IngredientsController {
         return response.created(ingredient)
       }
 
+      public async show(){
+        const ingredient = await Ingredient.all()
+        return ingredient
+      }
       
+      
+      public async showOne({params}: HttpContextContract){
+        const ingredient = await Ingredient.find(params.id)
+        return ingredient
+      }
 } 
