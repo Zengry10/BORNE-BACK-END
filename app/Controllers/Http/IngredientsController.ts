@@ -4,7 +4,7 @@ import ValidatorIngredient from '../../Validators/Admin/ValidatorIngredient'
 
 export default class IngredientsController {
     
-    public async CreateRecette ({ request, response }: HttpContextContract) {
+    public async createRecette ({ request, response }: HttpContextContract) {
         const payload = await request.validate(ValidatorIngredient)
         const ingredient = await Ingredient.create(payload)
         return response.created(ingredient)

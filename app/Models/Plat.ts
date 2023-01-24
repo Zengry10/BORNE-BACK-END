@@ -1,9 +1,14 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
-import { LucidModel } from '@ioc:Adonis/Lucid/Orm'
+// import { LucidModel } from '@ioc:Adonis/Lucid/Orm'
 import Ingredient from './Ingredient'
 
 export default class Plat extends BaseModel {
+
+    @column({ isPrimary: true })
+
+    public id: number
+    
     @column()
     public name: string
 
@@ -14,9 +19,9 @@ export default class Plat extends BaseModel {
     public price: number
 
     @manyToMany(() => Ingredient, {
-    pivotTable: 'plats_ingredients',
+    pivotTable: 'create_plat_ingredient_tables',
     })
-    public ingredients: ManyToMany<typeof Ingredient, LucidModel>
+    public ingredients: ManyToMany<typeof Ingredient>
 
     @column.dateTime({ autoCreate: true })
     public createdAt: DateTime

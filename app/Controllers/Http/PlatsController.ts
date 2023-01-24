@@ -1,20 +1,52 @@
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import PlatValidator from './PlatValidator'
-import Plat from '../Models/Plat'
-import Ingredient from '../Models/Ingredient'
+import Database from '@ioc:Adonis/Lucid/Database'
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Plat from '../../Models/Plat'
+import ValidatorPlat from '../../Validators/Admin/PlatValidator'
+export default class PlatsController {
 
-export default class PlatController {
-    async create({ request, response }: HttpContextContract) {
-        const payload = await request.validate(PlatValidator)
+  public async create({ request, response }: HttpContextContract) {
+    // Récupère les données de la requête
+    const data = request.only(['name', 'description', 'price'])
 
-        const plat = new Plat()
-        plat.name = payload.name
-        await plat.save()
+    const payload = await request.validate(ValidatorPlat)
 
-        const ingredientsToAssociate = await Ingredient.findMany(payload.ingredients)
+    // Crée un nouveau plat en utilisant les données de la requête
+    const plat = await Plat.create(payload)
 
-        await plat.related('ingredients').saveMany(ingredientsToAssociate)
+    // Si les ingrédients sont inclus dans la requête
+    if (request.input('ingredients')) {
+      // Récupère les ingrédients de la requête
+      const ingredients = request.input('ingredients')
 
-        return response.status(201).json(plat)
+      // Boucle sur les ingrédients pour les attacher au plat
+      for (let ingredient of ingredients) {
+        await Database.table('create_plat_ingredient_tables').insert({
+          plat_id: plat.id,
+          ingredient_id: ingredient
+        })
+      }
     }
+
+    // Renvoie un status 201 (Créé) et les détails du plat créé
+    return response.status(201).json(plat)
+  }
+
+
+
+  public async show({ params }: HttpContextContract) {
+    const plat = await Plat.findOrFail(params.id)
+    await plat.load('ingredients')
+    return plat
+  }
+
+  public async index({ response }: HttpContextContract) {
+    const plats = await Plat.all()
+    for(const plat of plats) {
+      await plat.load('ingredients')
+    }
+    return response.json(plats)
+  }
+
+  
+
 }
