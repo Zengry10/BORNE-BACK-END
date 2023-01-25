@@ -2,7 +2,7 @@ import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { rules } from '@ioc:Adonis/Core/Validator'
 
-export default class PlatValidator {
+export default class MenuValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   /*
@@ -25,9 +25,9 @@ export default class PlatValidator {
    *    ```
    */
   public schema = schema.create({
-    //i want to have a unique name for each plat
+    //i want to have a unique name for each menu
     name: schema.string({ trim: true }, [
-      rules.unique({ table: 'plats', column: 'name' }),
+      rules.unique({ table: 'menus', column: 'name' }),
     ]),
     // i want to remove the trim for all the other fields
     description: schema.string(),

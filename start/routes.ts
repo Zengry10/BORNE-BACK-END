@@ -35,10 +35,15 @@ Route.group(() => {
   Route.post('create/drink', 'DrinksController.createDrink')
 
 
-  Route.get('/read/plat/:id', "PlatsController.show")
-  Route.get('/allPlats', 'PlatsController.index')
-  Route.post('/create/plat', "PlatsController.create")
-  Route.delete('/delete/plat/:id', 'AuthController.delete')
+  Route.get('/read/complement', 'ComplementsController.show')
+  Route.get('/read/complement/:id', 'ComplementsController.showOne')
+  Route.post('create/complement', 'ComplementsController.createComplement')
+
+
+  Route.get('/read/menu/:id', "MenusController.show")
+  Route.get('/read/menu', 'MenusController.index')
+  Route.post('/create/menu', "MenusController.create")
+  Route.delete('/delete/menu/:id', 'AuthController.delete')
 
 
   }).prefix('admin').middleware('auth')

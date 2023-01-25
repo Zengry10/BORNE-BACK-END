@@ -1,14 +1,13 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
-// import { LucidModel } from '@ioc:Adonis/Lucid/Orm'
 import Menu from './Menu'
 
-export default class Drink extends BaseModel {
 
+
+export default class Complement extends BaseModel {
   @column({ isPrimary: true })
-
   public id: number
-  
+
   @column()
   public name: string
 
@@ -19,7 +18,7 @@ export default class Drink extends BaseModel {
   public price: number
 
   @manyToMany(() => Menu, {
-    pivotTable: 'create_menu_drink_tables',
+    pivotTable: 'create_menu_complement_tables',
   })
   public menus: ManyToMany<typeof Menu>
 
