@@ -30,6 +30,10 @@ Route.group(() => {
   Route.get('me', 'AuthController.me').middleware(['auth'])
 
 
+  Route.post('menu/:id/drinks', 'MenusController.addDrink')
+  Route.post('menu/:id/complement', 'MenusController.addComplement')
+
+
   Route.get('/read/drink', 'DrinksController.show')
   Route.get('/read/drink/:id', 'DrinksController.showOne')
   Route.post('create/drink', 'DrinksController.createDrink')
@@ -42,7 +46,7 @@ Route.group(() => {
 
   Route.get('/read/menu/:id', "MenusController.show")
   Route.get('/read/menu', 'MenusController.index')
-  Route.post('/create/menu', "MenusController.create")
+  Route.post('/create/menu', "MenusController.createMenu")
   Route.delete('/delete/menu/:id', 'AuthController.delete')
 
 
