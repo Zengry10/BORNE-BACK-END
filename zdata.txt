@@ -21,7 +21,6 @@ create menu :
   "name": "Big Mac",
   "description": "Le plus beau des hamburger",
   "price": "8",
-  "drinks": [1]
 }
 
 create burger : 
