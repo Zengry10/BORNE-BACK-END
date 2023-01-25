@@ -3,6 +3,7 @@ import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm
 // import { LucidModel } from '@ioc:Adonis/Lucid/Orm'
 import Drink from './Drink'
 import Complement from './Complement'
+import Burger from './Burger'
 
 export default class Menu extends BaseModel {
 
@@ -21,7 +22,7 @@ export default class Menu extends BaseModel {
 
     @manyToMany(() => Drink, {
     pivotTable: 'create_menu_drink_tables',
-    })
+        })
     public drinks: ManyToMany<typeof Drink>
     
 
@@ -29,6 +30,12 @@ export default class Menu extends BaseModel {
     pivotTable: 'create_menu_complement_tables',
         })
     public complements: ManyToMany<typeof Complement>
+
+
+    @manyToMany(() => Burger, {
+    pivotTable: 'create_menu_burger_tables',
+        })
+    public burgers: ManyToMany<typeof Burger>
 
 
 

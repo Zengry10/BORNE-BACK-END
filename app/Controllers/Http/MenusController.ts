@@ -2,7 +2,6 @@ import Database from '@ioc:Adonis/Lucid/Database'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Menu from '../../Models/Menu'
 import ValidatorMenu from '../../Validators/Admin/MenuValidator'
-import AddDrinkValidator from '../../Validators/Admin/AddDrinkValidator'
 
 export default class MenusController {
   
@@ -53,6 +52,25 @@ export default class MenusController {
       message: 'Complément ajoutée au menu avec succès'
     })
   }
+
+
+  public async addBurger({ params, request, response }: HttpContextContract) {
+    // Trouve le menu à mettre à jour
+    const menu = await Menu.findOrFail(params.id)
+
+    // Récupère les données de la requête
+    const burgerId = request.input('burger_id')
+
+    // Ajoute la boisson au menu en utilisant la table pivot
+    await Database.table('create_menu_burger_tables').insert({
+      menu_id: menu.id,
+      burger_id: burgerId
+    })
+
+    return response.status(201).json({
+      message: 'Burger ajoutée au menu avec succès'
+    })
+  }
   
 
 
@@ -63,6 +81,7 @@ export default class MenusController {
     const menu = await Menu.findOrFail(params.id)
     await menu.load('drinks')
     await menu.load('complements')
+    await menu.load('burgers')
     return menu
   }
 
@@ -71,6 +90,7 @@ export default class MenusController {
     for(const menu of menus) {
       await menu.load('drinks')
       await menu.load('complements')
+      await menu.load('burgers')
     }
     return response.json(menus)
   }

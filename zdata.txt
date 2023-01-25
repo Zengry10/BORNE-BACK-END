@@ -1,0 +1,33 @@
+create drink :
+
+{
+  "name": "coca",
+  "stock": "29",
+  "price": "2"
+}
+
+register : 
+
+{
+    "firstname": "remi",
+    "lastname": "lemoust",
+    "email": "remi@outlook.fr",
+    "password": "password"
+}
+
+create menu : 
+
+{
+  "name": "Big Mac",
+  "description": "Le plus beau des hamburger",
+  "price": "8",
+  "drinks": [1]
+}
+
+create burger : 
+
+{
+    "name" : "Royal Cheese",
+    "stock": "23",
+    "price": "5"
+}

@@ -3,7 +3,7 @@ import Burger from '../../Models/Burger'
 import ValidatorBurger from '../../Validators/Admin/BurgerValidator'
 export default class BurgersController {
 
-    public async createComplement ({ request, response }: HttpContextContract) {
+    public async createBurger ({ request, response }: HttpContextContract) {
         const payload = await request.validate(ValidatorBurger)
         const complement = await Burger.create(payload)
         return response.created(complement)

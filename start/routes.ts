@@ -32,6 +32,7 @@ Route.group(() => {
 
   Route.post('menu/:id/drinks', 'MenusController.addDrink')
   Route.post('menu/:id/complement', 'MenusController.addComplement')
+  Route.post('menu/:id/burger', 'MenusController.addBurger')
 
 
   Route.get('/read/drink', 'DrinksController.show')
@@ -42,6 +43,10 @@ Route.group(() => {
   Route.get('/read/complement', 'ComplementsController.show')
   Route.get('/read/complement/:id', 'ComplementsController.showOne')
   Route.post('create/complement', 'ComplementsController.createComplement')
+
+  Route.get('/read/burger', 'BurgersController.show')
+  Route.get('/read/burger/:id', 'BurgersController.showOne')
+  Route.post('create/burger', 'BurgersController.createBurger')
 
 
   Route.get('/read/menu/:id', "MenusController.show")

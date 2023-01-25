@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
+import Menu from './Menu'
 
 export default class Burger extends BaseModel {
   @column({ isPrimary: true })
@@ -13,6 +14,11 @@ export default class Burger extends BaseModel {
 
   @column()
   public price: number
+
+  @manyToMany(() => Menu, {
+    pivotTable: 'create_menu_burger_tables',
+  })
+  public menus: ManyToMany<typeof Menu>
 
 
   @column.dateTime({ autoCreate: true })
