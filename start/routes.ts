@@ -19,8 +19,6 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import User from '../app/Models/User'
-import Ingredient from '../app/Models/Ingredient'
 
 
 
@@ -32,9 +30,9 @@ Route.group(() => {
   Route.get('me', 'AuthController.me').middleware(['auth'])
 
 
-  Route.get('/read/ingredient', 'IngredientsController.show')
-  Route.get('/read/ingredient/:id', 'IngredientsController.showOne')
-  Route.post('create/ingredient', 'IngredientsController.createRecette')
+  Route.get('/read/drink', 'DrinksController.show')
+  Route.get('/read/drink/:id', 'DrinksController.showOne')
+  Route.post('create/drink', 'DrinksController.createDrink')
 
 
   Route.get('/read/plat/:id', "PlatsController.show")

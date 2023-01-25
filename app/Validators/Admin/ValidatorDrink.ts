@@ -2,7 +2,7 @@ import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { rules } from '@ioc:Adonis/Core/Validator'
 
-export default class IngredientValidator {
+export default class DrinkValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   /*
@@ -26,7 +26,7 @@ export default class IngredientValidator {
    */
   public schema = schema.create({
     name: schema.string({ trim: true }, [
-      rules.unique({ table: 'ingredients', column: 'name' }),
+      rules.unique({ table: 'drinks', column: 'name' }),
     ]),
     stock: schema.number(),
     price: schema.number(),

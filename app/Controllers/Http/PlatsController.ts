@@ -14,15 +14,15 @@ export default class PlatsController {
     const plat = await Plat.create(payload)
 
     // Si les ingrédients sont inclus dans la requête
-    if (request.input('ingredients')) {
+    if (request.input('drinks')) {
       // Récupère les ingrédients de la requête
-      const ingredients = request.input('ingredients')
+      const drinks = request.input('drinks')
 
       // Boucle sur les ingrédients pour les attacher au plat
-      for (let ingredient of ingredients) {
-        await Database.table('create_plat_ingredient_tables').insert({
+      for (let drink of drinks) {
+        await Database.table('create_plat_drink_tables').insert({
           plat_id: plat.id,
-          ingredient_id: ingredient
+          drink_id: drink
         })
       }
     }
@@ -35,14 +35,14 @@ export default class PlatsController {
 
   public async show({ params }: HttpContextContract) {
     const plat = await Plat.findOrFail(params.id)
-    await plat.load('ingredients')
+    await plat.load('drinks')
     return plat
   }
 
   public async index({ response }: HttpContextContract) {
     const plats = await Plat.all()
     for(const plat of plats) {
-      await plat.load('ingredients')
+      await plat.load('drinks')
     }
     return response.json(plats)
   }

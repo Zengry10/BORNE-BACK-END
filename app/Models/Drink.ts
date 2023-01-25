@@ -3,7 +3,7 @@ import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm
 // import { LucidModel } from '@ioc:Adonis/Lucid/Orm'
 import Plat from './Plat'
 
-export default class Ingredient extends BaseModel {
+export default class Drink extends BaseModel {
 
   @column({ isPrimary: true })
 
@@ -19,7 +19,7 @@ export default class Ingredient extends BaseModel {
   public price: number
 
   @manyToMany(() => Plat, {
-    pivotTable: 'create_plat_ingredient_tables',
+    pivotTable: 'create_plat_drink_tables',
   })
   public plats: ManyToMany<typeof Plat>
 
