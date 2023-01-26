@@ -18,6 +18,9 @@ export default class Menu extends BaseModel {
     public description: string
 
     @column()
+    public picture: string
+
+    @column()
     public price: number
 
     @manyToMany(() => Drink, {

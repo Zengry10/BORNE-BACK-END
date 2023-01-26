@@ -16,7 +16,11 @@ export default class Drink extends BaseModel {
   public stock: number
 
   @column()
+  public picture: string
+
+  @column()
   public price: number
+
 
   @manyToMany(() => Menu, {
     pivotTable: 'create_menu_drink_tables',

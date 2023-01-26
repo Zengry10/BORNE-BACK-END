@@ -15,6 +15,9 @@ export default class Complement extends BaseModel {
   public stock: number
 
   @column()
+  public picture: string
+
+  @column()
   public price: number
 
   @manyToMany(() => Menu, {
