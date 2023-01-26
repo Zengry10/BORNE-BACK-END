@@ -13,6 +13,7 @@
     "Database": "database",
     "Contracts": "contracts"
   },
+  
   "preloads": [
     "./start/routes",
     "./start/kernel"
@@ -39,5 +40,12 @@
   },
   "testProviders": [
     "@japa/preset-adonis/TestsProvider"
+  ],
+  
+  "metaFiles": [
+    {
+      "pattern": "public/**",
+      "reloadServer": false
+    }
   ]
-}
+  }

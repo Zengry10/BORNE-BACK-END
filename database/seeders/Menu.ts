@@ -20,12 +20,6 @@ export default class MenuuSeeder extends BaseSeeder {
         price: 8
       },
       {
-        name: "Menu Royal",
-        description: "Un burger avec deux tranches de viande, du fromage, de la salade, de la tomate et des oignons, avec des frites une boisson",
-        picture : "Menu/Royal.png",
-        price: 9
-      },
-      {
         name: "Menu Big",
         description: "Un burger géant avec deux tranches de viande, du fromage, de la salade, de la tomate et des oignons, avec des frites une boisson",
         picture : "Menu/Big.png",

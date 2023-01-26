@@ -8,54 +8,64 @@ export default class DrinkSeeder extends BaseSeeder {
   public async run () {
     await Drink.createMany([
       {
-        name: "Coca",
+        name: "Coca-Cola original 33 cL",
         stock: 30,
         price: 2,
       },
         {
-        name: "Fanta",
+        name: "Schweppes agrum' 33 cL",
         stock: 30,
         price: 2,
         },
         {
-        name: "Sprite",
+        name: "Fuze Tea pêche 33 cL",
         stock: 30,
         price: 2,
         },
         {
-        name: "Ice Tea",
+        name: "Capri-Sun Multivitamin 20cl",
         stock: 30,
         price: 2,
         },
         {
-        name: "Oasis",
+        name: "Oasis tropical 33 cL",
         stock: 30,
         price: 2,
         },
         {
-        name: "Orangina",
+        name: "Oasis pomme cassis framboise 2 L",
         stock: 30,
         price: 2,
         },
         {
-        name: "Jus d'orange",
+        name: "Oasis tropical 2 L",
         stock: 30,
         price: 2,
         },
         {
-        name: "Perrier",
+        name: "Vittel 50 cL",
         stock: 30,
         price: 2,
         },
         {
-        name: "Eau",
+        name: "San Pellegrino 1 L",
         stock: 30,
         price: 2,
         },
         {
-        name: "Schweppes",
+        name: "Orangina 1,5 L",
         stock: 30,
         price: 2,
+        },
+        {
+          name: "Sprite 1,25 L",
+          stock: 30,
+          price: 2,
+        },
+        {
+          name: "Perrier 33 cL",
+          stock: 30,
+          price: 2,
         },
     ])
   }

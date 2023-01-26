@@ -1,9 +1,8 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
-import Menu from './Menu'
-import Ingredient from './Ingredient'
+import Burger from './Burger'
 
-export default class Burger extends BaseModel {
+export default class Ingredient extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
@@ -11,24 +10,15 @@ export default class Burger extends BaseModel {
   public name: string
 
   @column()
- public stock : number
-
- @column()
- public picture: string
+  public stock: number
 
   @column()
   public price: number
 
-  @manyToMany(() => Menu, {
-    pivotTable: 'create_menu_burger_tables',
-  })
-  public menus: ManyToMany<typeof Menu>
-
-
-  @manyToMany(() => Ingredient, {
+  @manyToMany(() => Burger, {
     pivotTable: 'create_ingredient_burger_tables',
   })
-  public ingredients: ManyToMany<typeof Ingredient>
+  public burgers: ManyToMany<typeof Burger>
 
 
   @column.dateTime({ autoCreate: true })

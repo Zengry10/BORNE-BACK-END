@@ -18,11 +18,6 @@ export default class BurgerSeeder extends BaseSeeder {
         price: 4,
       },
       {
-        name: "Burger Royal",
-        stock: 30,
-        price: 4,
-      },
-      {
         name: "Big",
         stock: 30,
         price: 4,
@@ -58,22 +53,27 @@ export default class BurgerSeeder extends BaseSeeder {
         price: 4,
       },
       {
-        name: "Country",
-        stock: 30,
-        price: 4,
-      },
-      {
-        name: "Big Chicken",
-        stock: 30,
-        price: 4,
-      },
-      {
         name: "Toast",
         stock: 30,
         price: 4,
       },
       {
         name: "180",
+        stock: 30,
+        price: 4,
+      },
+      {
+        name: "180 Poivre",
+        stock: 30,
+        price: 4,
+      },
+      {
+        name: "Grill",
+        stock: 30,
+        price: 4,
+      },
+            {
+        name: "Double Grill",
         stock: 30,
         price: 4,
       },
