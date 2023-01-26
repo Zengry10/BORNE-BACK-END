@@ -12,6 +12,9 @@ export default class Burger extends BaseModel {
   @column()
  public stock : number
 
+ @column()
+ public picture: string
+
   @column()
   public price: number
 

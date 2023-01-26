@@ -3,7 +3,7 @@ import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
 import Drink from 'App/Models/Drink'
 
 
-export default class UserSeeder extends BaseSeeder {
+export default class DrinkSeeder extends BaseSeeder {
 
   public async run () {
     await Drink.createMany([

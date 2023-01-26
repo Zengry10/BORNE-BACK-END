@@ -7,7 +7,7 @@ export default class MenusController {
   
   public async createMenu({ request, response }: HttpContextContract) {
     // Récupère les données de la requête
-    const data = request.only(['name', 'description', 'price'])
+    const data = request.only(['name', 'description', 'price', 'description'])
 
     const payload = await request.validate(ValidatorMenu)
 

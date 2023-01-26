@@ -29,6 +29,7 @@ export default class BurgerValidator {
       rules.unique({ table: 'burgers', column: 'name' }),
     ]),
     stock: schema.number(),
+    picture: schema.string(),
     price: schema.number(),
   })
 

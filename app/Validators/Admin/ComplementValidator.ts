@@ -29,6 +29,7 @@ export default class ComplementValidator {
       rules.unique({ table: 'complements', column: 'name' }),
     ]),
     stock: schema.number(),
+    picture: schema.string(),
     price: schema.number(),
   })
 

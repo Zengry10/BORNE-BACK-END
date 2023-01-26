@@ -31,6 +31,7 @@ export default class MenuValidator {
     ]),
     // i want to remove the trim for all the other fields
     description: schema.string(),
+    picture: schema.string(),
     price: schema.number(),
   })
 
