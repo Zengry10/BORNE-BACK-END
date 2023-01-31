@@ -55,7 +55,7 @@ Route.group(() => {
   Route.delete('/delete/menu/:id', 'AuthController.delete')
 
 
-  }).prefix('admin').middleware('auth')
+  }).prefix('admin')
 
 
 

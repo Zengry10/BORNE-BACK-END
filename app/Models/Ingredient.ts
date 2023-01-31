@@ -13,6 +13,9 @@ export default class Ingredient extends BaseModel {
   public stock: number
 
   @column()
+  public picture: string
+
+  @column()
   public price: number
 
   @manyToMany(() => Burger, {

@@ -10,21 +10,25 @@ export default class DrinkSeeder extends BaseSeeder {
       {
         name: "tomate",
         stock: 30,
+        picture: "image/Ingredient/tomate.png",
         price: 2,
       },
       {
         name: "oignon",
         stock: 30,
+        picture: "image/Ingredient/oignon.png",
         price: 2,
       },
       {
         name: "steack",
         stock: 30,
+        picture: "image/Ingredient/steack.png",
         price: 2,
       },
       {
         name: "salade",
         stock: 30,
+        picture: "image/Ingredient/salade.png",
         price: 2,
       },
 
