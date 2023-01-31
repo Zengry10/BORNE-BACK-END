@@ -3,7 +3,7 @@ import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
 import Menu from 'App/Models/Menu'
 
 
-export default class MenuuSeeder extends BaseSeeder {
+export default class MenuSeeder extends BaseSeeder {
 
   public async run () {
     await Menu.createMany([
