@@ -113,6 +113,16 @@ export default class DrinkSeeder extends BaseSeeder {
         stock: 30,
         price: 2,
       },
+      {
+        name: "sel",
+        stock: 30,
+        price: 2,
+      },
+      {
+        name: "glaçon",
+        stock: 30,
+        price: 2,
+      },
 
 
 

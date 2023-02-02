@@ -96,12 +96,20 @@ export default class MenusController {
   public async index({ response }: HttpContextContract) {
     const data = await Menu.query().preload('burgers', (burgerQuery) => {
       burgerQuery.preload('ingredients')
-    }).preload('drinks').preload('complements').exec()
+    })
+    .preload('drinks', (drinkQuery) => {
+      drinkQuery.preload('ingredients')
+    })
+    .preload('complements', (complementQuery) => {
+      complementQuery.preload('ingredients')
+    })
 
     return response.status(201).json({
       status: 201,
       data: data,
   })
+
+  
 
   
     // const menus = await Menu.all()

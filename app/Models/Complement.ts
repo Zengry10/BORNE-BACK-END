@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
 import Menu from './Menu'
-
+import Ingredient from './Ingredient'
 
 
 export default class Complement extends BaseModel {
@@ -24,6 +24,12 @@ export default class Complement extends BaseModel {
     pivotTable: 'create_menu_complement_tables',
   })
   public menus: ManyToMany<typeof Menu>
+
+
+  @manyToMany(() => Ingredient, {
+    pivotTable: 'create_complement_ingredient_tables',
+  })
+  public ingredients: ManyToMany<typeof Ingredient>
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
