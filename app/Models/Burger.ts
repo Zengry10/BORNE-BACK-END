@@ -26,7 +26,7 @@ export default class Burger extends BaseModel {
 
 
   @manyToMany(() => Ingredient, {
-    pivotTable: 'create_ingredient_burger_tables',
+    pivotTable: 'create_burger_ingredient_tables',
   })
   public ingredients: ManyToMany<typeof Ingredient>
 

@@ -34,6 +34,8 @@ Route.group(() => {
   Route.post('menu/:id/complement', 'MenusController.addComplement')
   Route.post('menu/:id/burger', 'MenusController.addBurger')
 
+  Route.post("create/ingredient", "IngredientsController.createIngredient")
+
 
   Route.get('/read/drink', 'DrinksController.show')
   Route.get('/read/drink/:id', 'DrinksController.showOne')

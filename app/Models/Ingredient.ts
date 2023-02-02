@@ -12,14 +12,14 @@ export default class Ingredient extends BaseModel {
   @column()
   public stock: number
 
-  @column()
-  public picture: string
+  // @column()
+  // public picture: string
 
   @column()
   public price: number
 
   @manyToMany(() => Burger, {
-    pivotTable: 'create_ingredient_burger_tables',
+    pivotTable: 'create_burger_ingredient_tables',
   })
   public burgers: ManyToMany<typeof Burger>
 

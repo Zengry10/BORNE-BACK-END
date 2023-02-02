@@ -62,18 +62,6 @@ export default class MenuSeeder extends BaseSeeder {
         price: 12
       },
       {
-        name: "Menu Country",
-        description: "Un burger avec deux tranches de viande, du fromage, de la salade, de la tomate, des oignons, des oeufs et des lardons, avec des frites une boisson",
-        picture : "http://localhost:3333/image/Menu/Country.png",
-        price: 13
-      },
-      {
-        name: "Menu Premium Chicken",
-        description: "Un sandwich de poulet grillé accompagné de laitue, tomate, oignons rouges et mayonnaise, avec des frites une boisson ",
-        picture : "http://localhost:3333/image/Menu/PremiumChicken.png",
-        price: 13
-      },
-      {
         name: "Menu Toast",
         description: "Un toast grillé avec du fromage fondu, de la laitue, des tomates et des oignons rouges, avec des frites une boisson",
         picture : "http://localhost:3333/image/Menu/Toast.png",
@@ -85,6 +73,18 @@ export default class MenuSeeder extends BaseSeeder {
         picture : "http://localhost:3333/image/Menu/180.png",
         price: 10
       },
+      // {
+      //   name: "Menu Country",
+      //   description: "Un burger avec deux tranches de viande, du fromage, de la salade, de la tomate, des oignons, des oeufs et des lardons, avec des frites une boisson",
+      //   picture : "http://localhost:3333/image/Menu/Country.png",
+      //   price: 13
+      // },
+      // {
+      //   name: "Menu Premium Chicken",
+      //   description: "Un sandwich de poulet grillé accompagné de laitue, tomate, oignons rouges et mayonnaise, avec des frites une boisson ",
+      //   picture : "http://localhost:3333/image/Menu/PremiumChicken.png",
+      //   price: 13
+      // },
     ])
   }
 
