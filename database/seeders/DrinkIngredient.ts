@@ -17,7 +17,6 @@ export default class extends BaseSeeder {
       { drink_id: 9, ingredient_id: 23 },
       { drink_id: 10, ingredient_id: 23 },
       { drink_id: 11, ingredient_id: 23 },
-      { drink_id: 12, ingredient_id: 23 },
     ])
   }
 }

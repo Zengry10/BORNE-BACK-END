@@ -10,7 +10,7 @@ export default class FriteSeeder extends BaseSeeder {
       {
         name: "frites",
         stock: 30,
-        picture: "http://localhost:3333/image/Complement/Frites.png",
+        picture: "http://localhost:3333/image/Complement/frites.png",
         price: 4,
       },
       {

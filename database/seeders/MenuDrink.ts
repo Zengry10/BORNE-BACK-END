@@ -16,7 +16,6 @@ export default class extends BaseSeeder {
       { menu_id: 1, drink_id: 9 },
       { menu_id: 1, drink_id: 10 },
       { menu_id: 1, drink_id: 11 },
-      { menu_id: 1, drink_id: 12 },
 
       { menu_id: 2, drink_id: 1 },
       { menu_id: 2, drink_id: 2 },
@@ -29,7 +28,6 @@ export default class extends BaseSeeder {
       { menu_id: 2, drink_id: 9 },
       { menu_id: 2, drink_id: 10 },
       { menu_id: 2, drink_id: 11 },
-      { menu_id: 2, drink_id: 12 },
 
       { menu_id: 3, drink_id: 1 },
       { menu_id: 3, drink_id: 2 },
@@ -42,7 +40,6 @@ export default class extends BaseSeeder {
       { menu_id: 3, drink_id: 9 },
       { menu_id: 3, drink_id: 10 },
       { menu_id: 3, drink_id: 11 },
-      { menu_id: 3, drink_id: 12 },
 
       { menu_id: 4, drink_id: 1 },
       { menu_id: 4, drink_id: 2 },
@@ -55,7 +52,6 @@ export default class extends BaseSeeder {
       { menu_id: 4, drink_id: 9 },
       { menu_id: 4, drink_id: 10 },
       { menu_id: 4, drink_id: 11 },
-      { menu_id: 4, drink_id: 12 },
 
       { menu_id: 5, drink_id: 1 },
       { menu_id: 5, drink_id: 2 },
@@ -68,7 +64,6 @@ export default class extends BaseSeeder {
       { menu_id: 5, drink_id: 9 },
       { menu_id: 5, drink_id: 10 },
       { menu_id: 5, drink_id: 11 },
-      { menu_id: 5, drink_id: 12 },
 
       { menu_id: 6, drink_id: 1 },
       { menu_id: 6, drink_id: 2 },
@@ -81,7 +76,6 @@ export default class extends BaseSeeder {
       { menu_id: 6, drink_id: 9 },
       { menu_id: 6, drink_id: 10 },
       { menu_id: 6, drink_id: 11 },
-      { menu_id: 6, drink_id: 12 },
 
       { menu_id: 7, drink_id: 1 },
       { menu_id: 7, drink_id: 2 },
@@ -94,7 +88,6 @@ export default class extends BaseSeeder {
       { menu_id: 7, drink_id: 9 },
       { menu_id: 7, drink_id: 10 },
       { menu_id: 7, drink_id: 11 },
-      { menu_id: 7, drink_id: 12 },
 
       { menu_id: 8, drink_id: 1 },
       { menu_id: 8, drink_id: 2 },
@@ -107,7 +100,6 @@ export default class extends BaseSeeder {
       { menu_id: 8, drink_id: 9 },
       { menu_id: 8, drink_id: 10 },
       { menu_id: 8, drink_id: 11 },
-      { menu_id: 8, drink_id: 12 },
 
       { menu_id: 9, drink_id: 1 },
       { menu_id: 9, drink_id: 2 },
@@ -120,7 +112,6 @@ export default class extends BaseSeeder {
       { menu_id: 9, drink_id: 9 },
       { menu_id: 9, drink_id: 10 },
       { menu_id: 9, drink_id: 11 },
-      { menu_id: 9, drink_id: 12 },
 
       { menu_id: 10, drink_id: 1 },
       { menu_id: 10, drink_id: 2 },
@@ -133,7 +124,6 @@ export default class extends BaseSeeder {
       { menu_id: 10, drink_id: 9 },
       { menu_id: 10, drink_id: 10 },
       { menu_id: 10, drink_id: 11 },
-      { menu_id: 10, drink_id: 12 },
 
       { menu_id: 11, drink_id: 1 },
       { menu_id: 11, drink_id: 2 },
@@ -146,7 +136,6 @@ export default class extends BaseSeeder {
       { menu_id: 11, drink_id: 9 },
       { menu_id: 11, drink_id: 10 },
       { menu_id: 11, drink_id: 11 },
-      { menu_id: 11, drink_id: 12 },
     ])
   }
 }

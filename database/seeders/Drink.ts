@@ -26,12 +26,6 @@ export default class DrinkSeeder extends BaseSeeder {
         price: 2,
         },
         {
-        name: "Capri-Sun Multivitamin 20cl",
-        stock: 30,
-        picture: "http://localhost:3333/image/Drink/CapriSun.png",
-        price: 2,
-        },
-        {
         name: "Oasis tropical 33 cL",
         stock: 30,
         picture: "http://localhost:3333/image/Drink/OasisTropical.png",
