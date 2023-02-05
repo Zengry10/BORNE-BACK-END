@@ -1,10 +1,12 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import ValidatorOrder from '../../Validators/Admin/OrderValidator'
 import Order from '../../Models/Order'
-import '@adonisjs/websocket/build/adonis-websocket-client'
-import { use } from '@adonisjs/websocket-client'
-import { Server } from 'socket.io'
-import Ws from 'App/Services/Ws'
+// import '@adonisjs/websocket/build/adonis-websocket-client'
+// import { use } from '@adonisjs/websocket-client'
+// import { Server } from 'socket.io'
+// import Ws from 'App/Services/Ws'
+
+
 
 
 export default class OrdersController {
@@ -16,8 +18,8 @@ export default class OrdersController {
 
       const order = await Order.create(payload)
   
-      // Emit an event to notify about a new order
-      Ws.io.emit('newOrder', order)
+      // // Emit an event to notify about a new order
+      // Ws.io.emit('newOrder', order)
   
       return response.created(order)
     }

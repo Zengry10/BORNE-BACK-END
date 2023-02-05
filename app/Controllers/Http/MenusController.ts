@@ -5,6 +5,7 @@ import Burger from '../../Models/Burger'
 import ValidatorMenu from '../../Validators/Admin/MenuValidator'
 
 export default class MenusController {
+
   
   public async createMenu({ request, response }: HttpContextContract) {
     // Récupère les données de la requête
@@ -14,7 +15,19 @@ export default class MenusController {
     // Crée un nouveau menu en utilisant les données de la requête
     const menu = await Menu.create(payload)
     // Renvoie un status 201 (Créé) et les détails du menu créé
-    return response.status(201).json(menu)
+    try{
+      return response.status(201).json({
+        message: 'Menu créé avec succès',
+        menu
+      })
+    }catch(e){
+      return response.status(400).json({
+        message: 'Erreur lors de la création du menu',
+        
+      })
+    }
+
+
   }
 
   public async addDrink({ params, request, response }: HttpContextContract) {
