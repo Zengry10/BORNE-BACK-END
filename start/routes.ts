@@ -57,6 +57,10 @@ Route.group(() => {
   Route.delete('/delete/menu/:id', 'AuthController.delete')
 
 
+  Route.get('/read/order', 'OrdersController.getOrders')
+  Route.post('/create/order', 'OrdersController.createOrder')
+
+
   }).prefix('admin')
 
 
