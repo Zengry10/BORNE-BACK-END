@@ -19,7 +19,10 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-
+import Application from '@ioc:Adonis/Core/Application'
+import { schema } from '@ioc:Adonis/Core/Validator'
+import ValidatorMenu from '../app/Validators/Admin/MenuValidator'
+import Menu from '../app/Models/Menu'
 
 
 
@@ -65,7 +68,29 @@ Route.group(() => {
 
 
 
+  Route.post('posts', async ({ request }) => {
+    const postSchema = schema.create({
+      cover_image: schema.file({
+        size: '2mb',
+        extnames: ['jpg', 'gif', 'png'],
+      }),
+    })
+  
+    const payload = await request.validate({ schema: postSchema })
+  
+    await payload.cover_image.move(Application.publicPath('/image/Menu'))
 
+
+  })
+  
+
+
+  // const payload2 = await request.validate(ValidatorMenu)
+
+  //   // Crée un nouveau menu en utilisant les données de la requête
+  //   const menu = await Menu.create(payload2)
+
+  //   return menu
 
 
 Route.post('/register', 'AuthController.register')
