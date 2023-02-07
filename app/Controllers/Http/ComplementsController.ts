@@ -4,7 +4,7 @@ import ValidatorComplement from '../../Validators/Admin/ComplementValidator'
 
 export default class ComplementsController {
 
-    public async createComplement ({ request, response }: HttpContextContract) {
+    public async create ({ request, response }: HttpContextContract) {
         const payload = await request.validate(ValidatorComplement)
         const complement = await Complement.create(payload)
         return response.created(complement)

@@ -12,7 +12,7 @@ import Order from '../../Models/Order'
 export default class OrdersController {
 
 
-    public async createOrder({ request, response }: HttpContextContract) {
+    public async create({ request, response }: HttpContextContract) {
 
       const payload = await request.validate(ValidatorOrder)
 
@@ -24,7 +24,7 @@ export default class OrdersController {
       return response.created(order)
     }
   
-      public async getOrders ({ response }: HttpContextContract) { 
+      public async show ({ response }: HttpContextContract) { 
         const orders = await Order.all()
         return response.ok(orders)
       }

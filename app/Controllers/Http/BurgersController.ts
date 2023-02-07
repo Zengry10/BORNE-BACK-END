@@ -12,7 +12,7 @@ export default class BurgersController {
 
     //   }
 
-      public async createBurger({ request, response }: HttpContextContract) {
+      public async create({ request, response }: HttpContextContract) {
         // Récupère les données de la requête
 
         const payload = await request.validate(ValidatorBurger)
