@@ -34,6 +34,9 @@ public schema = schema.create({
     ]),
 
     password: schema.string({ trim: true }),
+    role_id: schema.number.optional([
+      rules.exists({ table: 'roles', column: 'id' }),
+    ]),
 })
 
 

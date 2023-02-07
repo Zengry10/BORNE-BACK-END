@@ -47,7 +47,7 @@ export default class AuthController {
         const user = auth.user!
   
         return response.ok({
-           ...user.serialize() 
+           ...user.serialize(),
           })
       }
 
