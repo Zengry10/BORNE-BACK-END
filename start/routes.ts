@@ -30,7 +30,7 @@ import { schema } from '@ioc:Adonis/Core/Validator'
   Route.get('/user', 'AuthController.show')
 
   // Menu routes
-  Route.post('/menu', "MenusController.create").middleware(['auth', 'admin'])
+  Route.post('/menu', "MenusController.create").middleware('admin')
   Route.delete('/menu/:id', 'AuthController.delete')
   Route.get('/menu/:id', "MenusController.showOne")
 

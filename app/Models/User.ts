@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
 import { column, beforeSave, BaseModel, belongsTo, BelongsTo } from '@ioc:Adonis/Lucid/Orm'
-import Role from './Role'
+import { UserRoleType } from '../Types/UserTypes'
 
 
 export default class User extends BaseModel {
@@ -18,8 +18,8 @@ export default class User extends BaseModel {
   @column()
   public email: string
 
-  @belongsTo(() => Role)
-  public role_id: BelongsTo<typeof Role>
+  @column()
+  public role: UserRoleType = 'client'
 
 
 

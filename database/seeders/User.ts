@@ -12,12 +12,14 @@ export default class UserSeeder extends BaseSeeder {
         lastname: "Lemoust",
         email: 'remi@dev.com',
         password: 'password',
+        role: 'admin'
       },
       {
         firstname: "Chabane",
         lastname: "Kelfaoui",
         email: 'chabane@dev.com',
-        password: 'password'
+        password: 'password',
+        role: 'cuisine'
       },
       {
         firstname: "Luis",

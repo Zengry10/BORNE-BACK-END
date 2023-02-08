@@ -45,14 +45,9 @@ export default class AuthController {
 
     public async me({auth, response} : HttpContextContract) {
         const user = auth.user!
-        // i want in the response the user with the role
-        await user.load('role_id')
 
-        
         return response.ok({
            ...user.serialize(),
-              role: user.role_id
-
           })
       }
 

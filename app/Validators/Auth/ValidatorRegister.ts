@@ -33,11 +33,8 @@ public schema = schema.create({
       rules.unique({ table: 'users', column: 'email ' }),
     ]),
 
-    password: schema.string({ trim: true }),
-    role_id: schema.number.optional([
-      rules.exists({ table: 'roles', column: 'id' }),
-    ]),
-})
+    password: schema.string({ trim: true })
+  })
 
 
   /**
