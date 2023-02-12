@@ -36,6 +36,5 @@ export default class OrdersController {
         await order.save()
         return response.ok(order)
       }
-      
 }
 
