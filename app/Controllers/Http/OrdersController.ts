@@ -28,5 +28,14 @@ export default class OrdersController {
         const orders = await Order.all()
         return response.ok(orders)
       }
+
+      public async update({ params, request, response }: HttpContextContract) {
+        const order = await Order.findOrFail(params.id)
+        const payload = await request.validate(ValidatorOrder)
+        order.merge(payload)
+        await order.save()
+        return response.ok(order)
+      }
+      
 }
 
