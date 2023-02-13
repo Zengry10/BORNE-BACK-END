@@ -6,8 +6,8 @@ export default class extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.integer('menu_id').unsigned().references('menus.id')
-      table.integer('burger_id').unsigned().references('burgers.id')
+      table.integer('menu_id').unsigned().references('menus.id').onDelete('CASCADE')
+      table.integer('burger_id').unsigned().references('burgers.id').onDelete('CASCADE')
       table.unique(['menu_id', 'burger_id'])
 
       /**

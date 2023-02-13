@@ -28,11 +28,17 @@ import { schema } from '@ioc:Adonis/Core/Validator'
 
   // User routes
   Route.get('/user', 'AuthController.show')
+  Route.delete('/user/:id', 'AuthController.delete')
+
 
   // Menu routes
+  
   Route.post('/menu', "MenusController.create")
-  Route.delete('/menu/:id', 'AuthController.delete')
+  Route.delete('/menus/:id', 'MenusController.delete')
+  Route.get('/menu', 'MenusController.show')
   Route.get('/menu/:id', "MenusController.showOne")
+
+
 
   // Add supplémenet Menu routes
   Route.post('menu/:id/drinks', 'MenusController.addDrink')
@@ -68,8 +74,7 @@ import { schema } from '@ioc:Adonis/Core/Validator'
 
   Route.group(() => {
     Route.get('me', 'AuthController.me')
-    Route.get('/menu', 'MenusController.show')
-  }).middleware(['auth'])
+  })
 
 
 

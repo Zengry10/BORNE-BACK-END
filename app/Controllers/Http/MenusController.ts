@@ -120,6 +120,83 @@ export default class MenusController {
       status: 201,
       data: data,
   })
+}
+
+//make me a function to delete a specific men
+
+public async delete({ params, response }: HttpContextContract) {
+  // Find the menu to delete
+  const menu = await Menu.findOrFail(params.id)
+
+  // Delete the menu
+  await menu.delete()
+
+
+
+  return response.status(200).json({
+    message: 'Menu supprimé avec succès',
+  })
+}
+
+public async update({ params, request, response }: HttpContextContract) {
+  // Find the menu to update
+  const menu = await Menu.findOrFail(params.id)
+  
+  // Récupère les données de la requête
+  const payload = await request.validate(ValidatorMenu)
+
+  // Met à jour le menu
+  menu.name = payload.name
+  menu.price = payload.price
+  menu.description = payload.description
+  await menu.save()
+
+  return response.status(200).json({
+    message: 'Menu mis à jour avec succès',
+    menu
+  })
+}
+
+// async updateArticle({request, response, auth,params}){
+//   try{
+//     const data = await request.validate(UpgradeArticleValidator)
+//     const article = await Article.find(params.id)
+//     article?.merge({
+//       name: data.name,
+//       price: data.price,
+//       image: data.image,
+//       user_id: auth.user?.id
+//     })
+//     await article?.save()
+//     const categorie = await ArticlesCategories.findBy('article_id', params.id)
+//     categorie?.merge({
+//       categorie_id: data.categorie
+//     })
+//     await categorie?.save()
+//     await ArticleIngredient.query().where('article_id', params.id).delete()
+//     for(let i = 0; i < data.ingredients.length; i++){
+//       ArticleIngredient.create({
+//         article_id: params.id,
+//         ingredient_id: data.ingredients[i]
+//       })
+//     }
+
+//     return response.status(201).json({
+//       status: 201,
+//       message: 'Article modifié avec succès',
+//       data: {article: article, categorie: categorie}
+//     })
+//   }catch (error){
+//     return {
+//       status: 500,
+//       message: 'Erreur lors de la modification de l\'article'
+//     }
+//   }
+// }
+
+
+
+
 
   
 
@@ -177,7 +254,6 @@ export default class MenusController {
     //   status: 201,
     //   data: data,
     // })
-  }
   
 }
 
