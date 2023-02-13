@@ -71,9 +71,58 @@ export default class BurgersController {
         return response.json(burgers)
     }
         
-        
     public async showOne({params}: HttpContextContract){
         const complement = await Burger.find(params.id)
         return complement
+    }
+
+    public async delete({ params, response }: HttpContextContract) {
+      // Find the menu to delete
+      const burger = await Burger.findOrFail(params.id)
+    
+      // Delete the menu
+      await burger.delete()
+    
+    
+    
+      return response.status(200).json({
+        message: 'Burger supprimé avec succès',
+      })
+    }
+
+    public async update({ params, request, response }: HttpContextContract) {
+      // Find the menu to update
+      const burger = await Burger.findOrFail(params.id)
+    
+      // Get the data from the request
+      const payload = await request.validate(ValidatorBurger)
+    
+      // Update the menu
+      burger.name = payload.name
+      burger.price = payload.price
+      burger.stock = payload.stock
+      burger.save()
+    
+      // If ingredients are included in the request
+      if (request.input('ingredients')) {
+        // Get the ingredients from the request
+        const ingredients = request.input('ingredients')
+    
+        // Detach all ingredients from the menu
+        await burger.related('ingredients').detach()
+    
+        // Loop through the ingredients and attach them to the menu
+        for (let ingredient of ingredients) {
+          await Database.table('create_burger_ingredient_tables').insert({
+            burger_id: burger.id,
+            ingredient_id: ingredient
+          })
+        }
+      }
+    
+      return response.status(200).json({
+        message: 'Burger mis à jour avec succès',
+        burger
+      })
     }
 }

@@ -29,7 +29,6 @@ export default class DrinkValidator {
       rules.unique({ table: 'drinks', column: 'name' }),
     ]),
     stock: schema.number(),
-    picture: schema.string(),
     price: schema.number(),
   })
  

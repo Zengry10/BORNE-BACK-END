@@ -25,12 +25,10 @@ export default class BurgerValidator {
    *    ```
    */
   public schema = schema.create({
-    name: schema.string({ trim: true }, [
-      rules.unique({ table: 'burgers', column: 'name' }),
-    ]),
+    name: schema.string({ trim: true }),
     stock: schema.number(),
-    picture: schema.string(),
     price: schema.number(),
+    ingredients: schema.array().members(schema.number()),
   })
 
   /**
