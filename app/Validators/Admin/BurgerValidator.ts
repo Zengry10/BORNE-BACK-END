@@ -28,7 +28,7 @@ export default class BurgerValidator {
     name: schema.string({ trim: true }),
     stock: schema.number(),
     price: schema.number(),
-    ingredients: schema.array().members(schema.number()),
+    // ingredients: schema.array().members(schema.number()),
   })
 
   /**
